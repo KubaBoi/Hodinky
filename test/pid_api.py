@@ -23,6 +23,7 @@ else:
     for index, trip in feed.trips.iterrows():
         trip_id = trip['trip_id']
         trip_stops = feed.get_stops(trip_ids=[trip_id])
+        #[stop["trip_id"] == trip_id for index, stop in feed.get_stop_times().iterrows()]
         for i in range(len(trip_stops) - 1):
             stop1 = trip_stops.iloc[i]
             stop2 = trip_stops.iloc[i + 1]
