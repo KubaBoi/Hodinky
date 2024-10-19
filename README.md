@@ -1,4 +1,21 @@
+
+# Readme
+
+Project Hodinky.ino is simple watch program. Instalation is:
+
+`.\run.bat`
+
+Without any argument.
+
+## Toolchain
+
+https://github.com/cjacker/opensource-toolchain-esp32
+
 ## Setup
+
+ISA: https://www.cadence.com/content/dam/cadence-www/global/en_US/documents/tools/silicon-solutions/compute-ip/isa-summary.pdf
+
+https://t-watch-document-en.readthedocs.io/en/latest/introduction/product/2020.html
 
 https://wellys.com/posts/esp32_cli/
 

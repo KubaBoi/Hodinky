@@ -21,6 +21,10 @@ def get_data_dict(path: str, name: str) -> dict :
     return data
 
 def load_stop_times(path: str) -> dict:
+    """
+    Create a dictionary where keys are trip_ids and values are lists
+    of dictionaries for every stop in the trip 
+    """
     with open(path, "r", encoding="utf-8") as f:
         dt = f.read()
     lines = dt.strip().split("\n")
@@ -74,9 +78,10 @@ def do_trip(trip: dict) -> None:
         diff = time_to_int(stop2["arrival_time"]) - time_to_int(stop1["departure_time"])
         G.add_edge(stop1["stop_id"], stop2["stop_id"], weight=diff)
 
-stops = get_data("test/files/stops.txt")
-trips = get_data("test/files/trips.txt")
-stop_times = load_stop_times("test/files/stop_times.txt")
+stops = get_data("test/files/stops.txt") # data about stops
+trips = get_data("test/files/trips.txt") # data about trips
+routes = get_data("test/files/routes.txt") # data about routes
+stop_times = load_stop_times("test/files/stop_times.txt") # stop arrivals and departs for every trip
 print("Load done")
 
 G = nx.DiGraph()
